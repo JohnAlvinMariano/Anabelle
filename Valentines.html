@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Anabelle Celeste ❤️</title>
+
+    <!-- Makes it responsive on phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ffccd5, #ffe6f0);
+            overflow: hidden;
+        }
+
+        .page {
+            display: none;
+            padding-top: 25vh;
+        }
+
+        #firstPage {
+            display: block;
+        }
+
+        h1 {
+            color: #ff1a75;
+            font-size: 28px;
+            padding: 0 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #yesBtn {
+            background-color: #ff1a75;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #444;
+            color: white;
+            position: absolute;
+        }
+
+        .heart {
+            font-size: 60px;
+            animation: beat 1s infinite;
+        }
+
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        p {
+            font-size: 18px;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- FIRST PAGE -->
+<div id="firstPage" class="page">
+    <h1>Anabelle Celeste 💕</h1>
+    <h1>Do you love me? 😘</h1>
+
+    <button id="yesBtn" onclick="showLove()">Yes 💖</button>
+    <button id="noBtn" onclick="moveButton()">No 😢</button>
+</div>
+
+<!-- SECOND PAGE -->
+<div id="secondPage" class="page">
+    <h1>Happy Valentine's Day ❤️</h1>
+    <div class="heart">❤️</div>
+    <p>You are the most beautiful part of my life.</p>
+    <p>Your smile lights up my darkest days ✨</p>
+    <p>I love you endlessly 💖</p>
+</div>
+
+<script>
+    function showLove() {
+        document.getElementById("firstPage").style.display = "none";
+        document.getElementById("secondPage").style.display = "block";
+    }
+
+    function moveButton() {
+        var button = document.getElementById("noBtn");
+
+        var maxX = window.innerWidth - button.offsetWidth;
+        var maxY = window.innerHeight - button.offsetHeight;
+
+        var randomX = Math.random() * maxX;
+        var randomY = Math.random() * maxY;
+
+        button.style.left = randomX + "px";
+        button.style.top = randomY + "px";
+    }
+</script>
+
+</body>
+</html>
